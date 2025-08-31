@@ -30,6 +30,5 @@
     "lucide": "latest",
     "toastr": "^2.1.4",
     "tw-elements": "^2.0.0"
-  },
-  "packageManager": "yarn@3.6.1"
+  }
 }
