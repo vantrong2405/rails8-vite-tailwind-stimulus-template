@@ -25,7 +25,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "vite_rails", "3.0.19"
 
 group :development, :test do
-  gem "brakeman", require: false
+  gem "brakeman", "~> 7.1.0", require: false
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
   gem "hmvc-rails", "1.0.4"
   gem "rubocop-rails-omakase", require: false

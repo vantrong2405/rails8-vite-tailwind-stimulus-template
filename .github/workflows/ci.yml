@@ -20,7 +20,32 @@ jobs:
           bundler-cache: true
 
       - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager --no-exit-on-warn --no-exit-on-error
+        run: |
+          # Run Brakeman with config file
+          bin/brakeman \
+            --config config/brakeman.yml \
+            --no-pager \
+            --format json \
+            --output brakeman-report.json || true
+          
+          # Display human-readable summary
+          bin/brakeman \
+            --config config/brakeman.yml \
+            --no-pager \
+            --format text
+          
+          # Upload report as artifact
+          if [ -f brakeman-report.json ]; then
+            echo "Brakeman scan completed. Report saved as artifact."
+          fi
+
+      - name: Upload Brakeman security report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: brakeman-security-report
+          path: brakeman-report.json
+          if-no-files-found: ignore
 
   lint:
     runs-on: ubuntu-latest
