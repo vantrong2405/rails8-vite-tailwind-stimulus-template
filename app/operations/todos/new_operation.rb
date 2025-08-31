@@ -13,6 +13,6 @@ class Todos::NewOperation < ApplicationOperation
   private
 
   def step_build_form
-     @form = Todos::NewForm.new
+    @form = Todos::NewForm.new
   end
 end

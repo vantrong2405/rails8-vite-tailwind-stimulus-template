@@ -16,6 +16,7 @@ class Todos::CreateOperation < ApplicationOperation
   def step_build_form
     @form = Todos::CreateForm.new(permit_params)
     return if @form.valid?
+
     yield
   end
 

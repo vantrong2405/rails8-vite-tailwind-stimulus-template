@@ -30,7 +30,8 @@ class TodosController < ApplicationController
     operator.call
     @form = operator.form
     return render :new, status: :unprocessable_entity if @form.errors.present?
-    redirect_to todos_path, notice: "Todo created successfully"
+
+    redirect_to todos_path, notice: 'Todo created successfully'
   end
 
   # [GET]...
