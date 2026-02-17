@@ -1,10 +1,4 @@
 # Brakeman Configuration for Rails 8 Project
-# This file configures Brakeman security scanning
-
-# Output formats
-output_files:
-  - "brakeman-report.json"
-  - "brakeman-report.html"
 
 # Exit behavior
 exit_on_warn: false
@@ -17,24 +11,6 @@ rails_version: 8
 skip_checks:
   - "CheckDeserialize"
   - "CheckFileAccess"
-
-# Ignore specific warnings (add as needed)
-ignore:
-  # Example: ignore specific SQL injection warnings
-  # - warning_type: "SQL Injection"
-  #   warning_code: 0
-  #   fingerprint: "abc123"
-  #   check_name: "SQL"
-  #   message: "User input in SQL"
-  #   file: "app/controllers/example_controller.rb"
-  #   line: 42
-  #   link: "https://brakemanscanner.org/docs/warning_types/sql_injection/"
-  #   code: "User.find(params[:id])"
-  #   render_path: null
-  #   location: null
-  #   user_input: "params[:id]"
-  #   confidence: "Medium"
-  #   note: "This is a false positive"
 
 # Performance options
 parallel_checks: true
