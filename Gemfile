@@ -5,10 +5,10 @@ gem "bootsnap", require: false
 gem "devise"
 gem "enumerize", "2.8.1"
 gem "kamal", require: false
-gem "pg", "1.6.1"
+gem "pg", "1.6.3"
 gem "puma", "6.4.2"
 gem "rack-cors"
-gem "rails", "~> 8.0.2"
+gem "rails", "8.0.2"
 gem "rbs", "3.4.4"
 gem "redis", "5.4.1"
 gem "rubocop"
@@ -25,11 +25,11 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "vite_rails", "3.0.19"
 
 group :development, :test do
-  gem "brakeman", "~> 7.1.0", require: false
+  gem "brakeman", "7.1.0", require: false
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
-  gem "hmvc-rails", "1.0.4"
   gem "rubocop-rails-omakase", require: false
   gem "ruby-lsp"
+  gem "rspec-rails"
 end
 
 group :development do
@@ -39,5 +39,4 @@ end
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
-  gem "sqlite3"
 end
